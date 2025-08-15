@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dspetshop — Petshop Modern</title>
+  <meta name="description" content="dspetshop — Petshop modern dengan produk terlaris, testimoni, dan layanan klinik.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Beranda dspetshop">
+        <img src="assets/img/logo.svg" alt="Logo dspetshop" class="logo"/>
+        <span>dspetshop</span>
+      </a>
+      <nav class="nav">
+        <a href="#produk">Produk</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#kritik-saran">Kritik & Saran</a>
+        <a href="#alamat">Alamat</a>
+      </nav>
+      <button class="cart-btn" id="openCart" aria-label="Buka keranjang">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44A1 1 0 0 0 9 18h10v-2H9.42l.93-1.68h6.9a1 1 0 0 0 .9-.55l3.07-6.14A1 1 0 0 0 20.33 6H7.21L6.27 4H7zM7 20a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-text">
+        <h1>Semua Kebutuhan Hewan Kesayangan, <span class="grad">Dalam Satu Tempat</span></h1>
+        <p>Produk pilihan, layanan ramah, dan klinik hewan siap membantu. Belanja mudah—tinggal klik, tambah ke keranjang, dan checkout.</p>
+        <a href="#produk" class="btn-primary">Lihat Produk</a>
+      </div>
+      <div class="hero-art">
+        <img src="assets/img/hero-pet.svg" alt="Ilustrasi hewan peliharaan bahagia">
+      </div>
+    </section>
+
+    <section id="produk" class="container products">
+      <div class="section-head">
+        <h2>Produk Terlaris</h2>
+        <p>Maksimal 5 item — geser untuk melihat lainnya.</p>
+      </div>
+      <div class="slider" aria-roledescription="carousel" aria-label="Slider Produk Terlaris">
+        <button class="slider-control prev" id="prevSlide" aria-label="Sebelumnya">‹</button>
+        <div class="slides" id="slides" role="group">
+          <!-- Slides will be injected by JS -->
+        </div>
+        <button class="slider-control next" id="nextSlide" aria-label="Berikutnya">›</button>
+      </div>
+    </section>
+
+    <section id="testimoni" class="container testimonials">
+      <div class="section-head">
+        <h2>Testimoni Pelanggan</h2>
+        <p>Yang mereka rasakan setelah belanja di dspetshop.</p>
+      </div>
+      <div class="testimonial-list" id="testimonialList">
+        <!-- Testimonials injected by JS -->
+      </div>
+
+      <div class="section-head">
+        <h3>Tambah Testimoni Anda</h3>
+        <p>Bagikan pengalaman Anda agar kami makin baik.</p>
+      </div>
+      <form id="testimonialForm" class="card form">
+        <div class="form-row">
+          <label for="tName">Nama</label>
+          <input id="tName" name="name" type="text" placeholder="Nama Anda" required>
+        </div>
+        <div class="form-row">
+          <label for="tRating">Rating</label>
+          <select id="tRating" name="rating" required>
+            <option value="5">★★★★★ (5)</option>
+            <option value="4">★★★★☆ (4)</option>
+            <option value="3">★★★☆☆ (3)</option>
+            <option value="2">★★☆☆☆ (2)</option>
+            <option value="1">★☆☆☆☆ (1)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="tMessage">Pesan</label>
+          <textarea id="tMessage" name="message" rows="3" placeholder="Tulis pengalaman Anda..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Kirim Testimoni</button>
+        <p class="muted small">Testimoni disimpan di perangkat Anda (localStorage).</p>
+      </form>
+    </section>
+
+    <section id="kritik-saran" class="container feedback">
+      <div class="section-head">
+        <h2>Kritik & Saran</h2>
+        <p>Sampaikan masukan agar pelayanan kami semakin maksimal.</p>
+      </div>
+      <form id="feedbackForm" class="card form">
+        <div class="form-row">
+          <label for="fName">Nama</label>
+          <input id="fName" name="name" type="text" placeholder="Nama Anda" required>
+        </div>
+        <div class="form-row">
+          <label for="fEmail">Email</label>
+          <input id="fEmail" name="email" type="email" placeholder="email@contoh.com" required>
+        </div>
+        <div class="form-row">
+          <label for="fMessage">Pesan</label>
+          <textarea id="fMessage" name="message" rows="4" placeholder="Tulis kritik/saran..." required></textarea>
+        </div>
+        <button type="submit" class="btn-outline">Kirim</button>
+        <p class="muted small">Data tidak dikirim ke server—hanya ditampilkan sebagai contoh.</p>
+      </form>
+      <div id="feedbackPreview" class="card" hidden></div>
+    </section>
+
+    <section id="alamat" class="container address">
+      <div class="section-head">
+        <h2>Alamat Klinik</h2>
+        <p>Datang langsung ke klinik kami.</p>
+      </div>
+      <div class="card addr-card">
+        <div class="addr-icon">
+          <img src="assets/img/pin.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="addr-text">
+          <h3>dspetshop Klinik</h3>
+          <p>Jalan Wibisana 36, Jakarta</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> dspetshop. All rights reserved.</p>
+      <div class="social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="WhatsApp">WA</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Keranjang Belanja</h3>
+      <button id="closeCart" class="icon-btn" aria-label="Tutup">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">Rp0</strong>
+      </div>
+      <button id="checkoutBtn" class="btn-primary">Checkout</button>
+    </div>
+  </aside>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
